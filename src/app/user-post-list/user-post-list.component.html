@@ -1,0 +1,41 @@
+<!-- write  *ngFor="let userPost of userPosts"
+ 
+ 
+-->
+<h2>User Post List</h2>
+<button class="top-right-button" (click)="onNavigationBar()">Go to Home</button>
+<div class="cards-container">
+    <div class="card" *ngFor="let userPost of userPosts"> 
+        <div class="card-header" >
+            Post Details 
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Post Id: {{userPost.id}}</h5>
+            <p class="card-text">Posted On: {{getOneDayDate(userPost.postedon)|date:'yyyy-MM-dd'}}</p>
+            <p class="card-text">Published On: {{getOneDayDate(userPost.publishondate)|date:'yyyy-MM-dd'}}</p>
+            <p class="card-text">Published Time: {{userPost.publishontime}}</p>
+            <p class="card-text">Posttype: {{userPost.posttype}}</p>
+            <!--<p class="card-text">postcontexttext:{{userPost.postcontexttext}}</p> -->
+            <div *ngIf="userPost.posttype==='Text'" class="card-body">
+                <p class="card-text">PostContent: {{userPost.postcontexttext}}</p>
+            </div>
+            <div *ngIf="userPost.posttype==='Image'" class="card-body">
+                <img [src]="getImageUrl(userPost.postcontexttext)" class="card-img-top" alt="Image">
+            </div>
+            <div *ngIf="userPost.posttype==='Video'" class="card-body">
+            <video controls>
+                <source [src]="getVideoUrl(userPost.postcontexttext)" type="video/mp4">
+              </video>
+            </div>
+            <p class="card-text">postattachmenturl: {{userPost.postattachmenturl}}</p>
+            <p class="card-text">poststatus: {{userPost.poststatus}}</p>
+            <p class="card-text">userName: {{userPost.userName}}</p>
+            <p class="card-text">socialnetworktype:{{userPost.socialnetworktype}}</p>
+            <p class="card-text">isScheduled: {{userPost.isScheduled}}</p>
+            <div *ngIf="isCancel(userPost)">
+                <button (click)="cancelPost(userPost.id)">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+

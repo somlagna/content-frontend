@@ -1,0 +1,33 @@
+.beautiful-nav {
+    background-color: #333; /* Set the background color*/ 
+    color: white; /* Set the text color */
+    padding: 20px;/* Add padding for spacing*/
+    background: linear-gradient(to right, #ff4b2b, #ff416c); /* Apply a gradient background */
+    animation: gradientAnimation 5s infinite; 
+  }
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%; /* Starting position of the gradient animation */
+    }
+    100% {
+      background-position: 100% 50%; /* Ending position of the gradient animation */
+    }
+  }
+  .full-width-height {
+    width: 100%;
+    height: 100%;
+    
+  }
+  button.list-button {
+    background-color: orange;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button.list-button:hover {
+    background-color: #ff9800;
+  }

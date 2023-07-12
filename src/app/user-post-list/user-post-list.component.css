@@ -1,0 +1,30 @@
+
+.cards-container {
+    column-count: 2;
+  }
+  .cards-container div {
+     background: floralwhite;
+     -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  .cards-container div:first-child {
+      margin: 0;
+  }
+  .top-right-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .top-right-button:hover {
+    background-color: #45a049;
+  }
